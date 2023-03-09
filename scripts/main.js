@@ -2,7 +2,7 @@
 const style = document.createElement('style');
 
 // Set the textContent property of the <style> element to the CSS code
-style.textContent = 'html p:hover { border: 2px solid red; }';
+style.textContent = 'html p span:hover { border: 2px solid red; }';
 
 // Append the <style> element to the <head> of the document
 document.head.appendChild(style);
@@ -10,27 +10,24 @@ document.head.appendChild(style);
 // Get the <p> element
 const paragraph = document.querySelectorAll('p');
 console.log(paragraph)
-console.log("here")
 paragraph.forEach(function (arrayItem) {
     // Get the text content of the <p> element
     let text=arrayItem.innerText
 
-    // Split the text into an array of wordd
+    // Split the text into an array of word
     const words = text.split(' ');
-    console.log(words)
+    // console.log(words)
 
+    let spanText=""
     // Map each word to a new <span> element
     const spanWords = words.map(word => {
-        const span = document.createElement('span')
+        let span = document.createElement('span')
         span.textContent = word
-        console.log(span)
+        span=span.outerHTML
+        spanText+= ' ' + span
         }
     )
-
-    console.log('Words:')
-    spanWords.forEach(function (item) {
-        console.log(item.innerHTML)
-    })
+    console.log(spanText)
     // const spanText=spanWords.join(' ')
     // const spanWords = words.map(word => {
     // const span = document.createElement('span');
@@ -41,7 +38,7 @@ paragraph.forEach(function (arrayItem) {
     // const spanText = spanWords.join(' ');
     
     // Set the innerHTML of the <p> element to the string of <span> elements
-    // arrayItem.innerHTML = spanText;
+    arrayItem.innerHTML = spanText;
     });
     
 
