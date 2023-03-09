@@ -1,11 +1,10 @@
 // Create a new <style> element
-const style = document.createElement('style');
+let styleSheet = document.createElement('style');
 
-// Set the textContent property of the <style> element to the CSS code
-style.textContent = 'html p span:hover { background-color: pink }';
+styleSheet.textContent='html p span.foreignWord:hover { background-color: pink }'
 
 // Append the <style> element to the <head> of the document
-document.head.appendChild(style);
+document.head.appendChild(styleSheet);
 
 // Get the <p> element
 const paragraph = document.querySelectorAll('p');
@@ -22,6 +21,7 @@ paragraph.forEach(function (arrayItem) {
     // Map each word to a new <span> element
     const spanWords = words.map(word => {
         let span = document.createElement('span')
+        span.className="foreignWord"
         span.textContent = word
         span=span.outerHTML
         spanText+= ' ' + span

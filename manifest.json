@@ -11,7 +11,7 @@
     "action": {
       "default_icon": "icons/languages128.png"
     },
-    "permissions": ["activeTab"],
+    "permissions": ["tabs","activeTab"],
     "content_scripts": [
         {
             "js": [
