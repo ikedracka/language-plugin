@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "My Extension",
+    "version": "1.0",
+    "description": "This is my extension",
+    "icons": 
+      {
+        "16": "icons/languages16.png",
+        "128": "icons/languages128.png"
+      },
+    "action": {
+      "default_icon": "icons/languages128.png"
+    },
+    "permissions": ["activeTab"],
+    "content_scripts": [
+        {
+            "js": [
+                "scripts/main.js"
+            ],
+            "matches": [
+                "https://*/*"
+            ]
+        }
+    ]
+  }
+  
