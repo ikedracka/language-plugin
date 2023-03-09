@@ -8,7 +8,6 @@ document.head.appendChild(styleSheet);
 
 // Get the <p> element
 const paragraph = document.querySelectorAll('p');
-console.log(paragraph)
 paragraph.forEach(function (arrayItem) {
     // Get the text content of the <p> element
     let text=arrayItem.innerText
@@ -27,10 +26,23 @@ paragraph.forEach(function (arrayItem) {
         spanText+= ' ' + span
         }
     )
-    console.log(spanText)
     
     // Set the innerHTML of the <p> element to the string of <span> elements
     arrayItem.innerHTML = spanText;
     });
-    
 
+const allWords = document.getElementsByClassName("foreignWord")
+console.log(allWords)
+
+let foreignWords = []
+
+const logClick = () => {
+    console.log("Clicked!")
+}
+
+for (let i=0 ; i< allWords.length ; i++) {
+    // console.log(element.innerText)
+    allWords[i].addEventListener('click', logClick)
+}
+    
+console.log(foreignWords)
