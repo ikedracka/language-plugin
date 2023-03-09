@@ -2,7 +2,7 @@
 const style = document.createElement('style');
 
 // Set the textContent property of the <style> element to the CSS code
-style.textContent = 'html p span:hover { border: 2px solid red; }';
+style.textContent = 'html p span:hover { background-color: pink }';
 
 // Append the <style> element to the <head> of the document
 document.head.appendChild(style);
@@ -28,14 +28,6 @@ paragraph.forEach(function (arrayItem) {
         }
     )
     console.log(spanText)
-    // const spanText=spanWords.join(' ')
-    // const spanWords = words.map(word => {
-    // const span = document.createElement('span');
-    // span.textContent = word;
-    // return span;})
-
-    // Join the array of <span> elements into a string
-    // const spanText = spanWords.join(' ');
     
     // Set the innerHTML of the <p> element to the string of <span> elements
     arrayItem.innerHTML = spanText;
