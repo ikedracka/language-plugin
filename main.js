@@ -1,3 +1,6 @@
+import PorterStemmerPl from 'natural'
+
+
 // Create a new <style> element
 let styleSheet = document.createElement('style');
 
@@ -36,13 +39,16 @@ console.log(allWords)
 
 let foreignWords = []
 
-const logClick = () => {
-    console.log("Clicked!")
+const addWord = (e) => {
+    const regex = /[^0-9a-zA-Ząćęłńóśźż]/g;
+    word=e.target.innerText.replace(regex, '').toLowerCase()
+    foreignWords.push(word);
+    console.log("Clicked! ", word)
 }
 
 for (let i=0 ; i< allWords.length ; i++) {
     // console.log(element.innerText)
-    allWords[i].addEventListener('click', logClick)
+    allWords[i].addEventListener('click', addWord)
 }
     
 console.log(foreignWords)

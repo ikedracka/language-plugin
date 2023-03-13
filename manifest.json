@@ -15,7 +15,7 @@
     "content_scripts": [
         {
             "js": [
-                "scripts/main.js"
+                "src/main.js"
             ],
             "matches": [
                 "https://*/*"
